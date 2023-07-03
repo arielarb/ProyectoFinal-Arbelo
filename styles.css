@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'AlbertSans';
+  src: url('./fonts/AlbertSans-VariableFont_wght.ttf') format('woff2'),
+       url('./fonts/AlbertSans-Italic-VariableFont_wght.ttf') format('woff');
+}
+
+body {
+  font-family: AlbertSans, sans-serif;
+  background-color: rgb(1, 6, 82);
+}
+
+#titulo {
+  color: white;
+  font-weight: lighter;
+  text-align: center;
+  padding: 20px;
+}
+
+.botonNewsletter, .verCarrito {
+  margin: 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+#formulario{
+  margin: 10px;
+}
+
+.colorFondo {
+  background-color:  rgb(1, 6, 82);
+}
+
+.formatoDiv {
+  background-color: black;
+}
+
+.cardPropia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Cambria;
+  width: 300px;
+  text-align: center;
+  background-color: white;
+}
+
+.miCard {
+  padding: 5px;
+}
+ 
+#contenedorCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.carrito {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.eventoEnCarrito{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: AlbertSans, sans-serif;
+  width: 260px;
+  text-align: center;
+  background-color: rgb(147, 216, 147);
+  margin: 10px;
+}
