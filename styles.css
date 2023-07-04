@@ -25,7 +25,10 @@ body {
 }
 
 #formulario{
+  display: none;
   margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .colorFondo {
@@ -57,10 +60,14 @@ body {
     margin: 10px;
 }
 
-.carrito {
+#carritoCompra, #paraFinalizarCompra {
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 10px;
+    align-items: center;
+    align-content: center;
+    margin: 5px;
+    padding: 5px;
 }
 
 .eventoEnCarrito{
@@ -71,5 +78,5 @@ body {
   width: 260px;
   text-align: center;
   background-color: rgb(147, 216, 147);
-  margin: 10px;
+  margin: 5px;
 }

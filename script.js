@@ -13,7 +13,7 @@ const introPortal = document.getElementById("titulo")
 const contenedorCards = document.getElementById("contenedorCards")
 const carritoCompra = document.getElementById("carritoCompra")
 
-//Incorporar titulo al DOM
+//Incorporar titulares al DOM
 const tituloDOM = document.createElement("div")
 tituloDOM.innerHTML = `<img src="./Media/LOGO111.PNG">
   <h5> Portal online para venta de entradas <h5/>
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //Generar cards para cada espectáculo
 function mostrarEventos(EventosEnJSON) {
   for (let evento of EventosEnJSON) {
-    let contenedorHijo = document.createElement("div")
-    contenedorHijo.innerHTML = `
+    let contenedor = document.createElement("div")
+    contenedor.innerHTML = `
      <div class="card cardPropia" style="width: 18rem, font-family: AlbertSans, sans-serif">
      <img src=${evento.imagen} class="card-img-top" alt="ImagenDeEvento">
        <div class="card-body micard">
@@ -50,15 +50,15 @@ function mostrarEventos(EventosEnJSON) {
          <input type="button" class="btn btn-primary" value="Comprar" onclick="agregarCarrito(${evento.id})"> 
        </div>
      </div>`
-    contenedorHijo.classList.add("miCard")
-    contenedorCards.append(contenedorHijo)
+    contenedor.classList.add("miCard");
+    contenedorCards.append(contenedor)
   }
 }
 
 //Evento para abrir el formulario de inscripción al Newsletter
 const btnVerNewsletter = document.querySelector("#botonNewsletter")
 btnVerNewsletter.onclick = () => {
-    document.getElementById("formulario").style.display = "block";
+    document.getElementById("formulario").style.display = "flex";
 }
 
 
@@ -92,9 +92,9 @@ datosFormulario.onsubmit = (e) => {
 
 
 //Codigo para el carrito de compras
-let carrito = JSON.parse(localStorage.getItem("Carrito")) || []; //aqui se almacenan la selección de espectáculos en el carrito
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //aqui se almacenan la selección de espectáculos en el carrito
 
-//Agrego items al carrito de compras - primero chequeo si hay items existentes para agregar más cantidad, sino agrego nuevo elemento al array del carrito y luego con "actualizarCarrito()" genero la card de la selección
+//Agrego items al carrito de compras en LS - primero chequeo si hay items existentes para agregar más cantidad, sino agrego nuevo elemento al array del carrito y luego con "actualizarCarrito()" genero la card de la selección
 const agregarCarrito = (evento) => {
   Toastify({
       text: "¡Agregaste 1 entrada a tu carrito!",
@@ -119,19 +119,12 @@ const agregarCarrito = (evento) => {
           const eventoNuevo = data.find((item) => item.id === evento);
           carrito.push(eventoNuevo);
         }
-      actualizarCarrito();
-    });
+  actualizarCarrito();
+  localStorage.setItem("carrito", JSON.stringify(carrito))
+  });
 };
 
-//Evento para visualizar el carrito
-const verCarrito = document.querySelector("#verCarrito")
-verCarrito.onclick = () => {
-  carritoCompra.style.display = "block";
-  paraFinalizarCompra.style.display = "block";
-}
-
-precioFinal = 0
-
+//Generar las cards de la selección para el carrito
 const actualizarCarrito = () => {
   carritoCompra.innerHTML = '';
     carrito.forEach((evento) => {
@@ -139,12 +132,9 @@ const actualizarCarrito = () => {
         contenedor.classList.add('eventoEnCarrito');
         const mensaje = document.createElement('div');
         mensaje.innerText = `Agregaste ${evento.cantidad} entrada/s para ${evento.nombre} - Costo total: (${evento.precio*evento.cantidad})`;
-        localStorage.setItem(`Cantidad de entradas para ${evento.nombre}`, evento.cantidad);
-        localStorage.setItem(`Costo total de entradas para ${evento.nombre}`, (evento.cantidad*evento.precio));
-        precioFinal += evento.precio;
-        const botonEliminar = document.createElement('button');
         const cantidad = document.createElement('p');
         cantidad.textContent = evento.cantidad;
+        const botonEliminar = document.createElement('button');
         botonEliminar.textContent = 'Eliminar';
         botonEliminar.addEventListener('click', () => {
           eliminarCarrito(evento);
@@ -167,21 +157,10 @@ const actualizarCarrito = () => {
         contenedor.appendChild(botonEliminar);
         
       carritoCompra.appendChild(contenedor);
-      document.body.append(carritoCompra);
-
     });
   }
 
-const paraFinalizarCompra = document.getElementById("paraFinalizarCompra")
-const finalizarCompra = document.createElement("div")
-finalizarCompra.innerHTML += `
-      <h6 style="color:white"> Total a pagar por tu pedido: $ ${precioFinal} </h6>
-      <input type="button" value="Finalizar Compra" onClick="finalizarCompra()">
-      <input type="button" value="Vaciar Carrito" onClick="limpiaCart()">`
-paraFinalizarCompra.append(finalizarCompra)
-  
-
-//Si quiero eliminar de a una la selección de espectáculos en el carrito
+  //Si quiero eliminar de a una la selección de espectáculos en el carrito
 const eliminarCarrito = (evento) => {
     if (evento.cantidad > 1) {
         evento.cantidad--;
@@ -191,3 +170,43 @@ const eliminarCarrito = (evento) => {
     }
     actualizarCarrito()
 }
+
+//Evento para visualizar el carrito
+const verCarrito = document.querySelector("#verCarrito")
+verCarrito.onclick = () => {
+  carritoCompra.style.display = "flex";
+  paraFinalizarCompra.style.display = "flex";
+}
+
+//Botones que acompañan a los elementos en el carrito
+const paraFinalizarCompra = document.getElementById("paraFinalizarCompra")
+const finalizarCompra = document.createElement("div")
+finalizarCompra.innerHTML += `
+      <input type="button" value="Finalizar Compra" onClick="terminarCompra()">
+      <input type="button" value="Vaciar Carrito" onClick="vaciarCarrito()">`
+paraFinalizarCompra.append(finalizarCompra)
+
+function vaciarCarrito(){
+    while(carrito.length > 0){
+        carrito.pop()
+    }
+    Swal.fire({
+      title: '¡Eliminado!',
+      text: 'Tu carrito de compras está vacío.',
+      icon: 'success',
+    })
+    localStorage.removeItem("carrito")
+    carritoCompra.innerHTML = ``
+} 
+
+function terminarCompra(){
+  swal.fire({
+    title: "¡Muchas gracias!",
+    text: "Tu compra fue realizada con éxito",
+    icon: "success",
+    timer: 3000
+  }) 
+  localStorage.removeItem("carrito")
+  carrito.pop()
+  carritoCompra.innerHTML = ``
+} 
