@@ -2,7 +2,7 @@
   {
     "id": 1,
     "imagen": "https://cineargentinohoy.com.ar/wp-content/uploads/2022/08/1-scaled.jpeg",
-    "nombre": "'Casados con hijos'",
+    "nombre": "Casados con hijos",
     "categoria": "Teatro",
     "lugar": "Teatro Gran Rex",
     "precio": 10000,
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "imagen": "https://i.axs.com/2018/01/disney-on-ice-frozen-tickets_04-05-18_18_5a5e8ba257a65.png",
-    "nombre": "'Frozen on Ice'",
+    "nombre": "Frozen on Ice",
     "categoria": "Show infantil",
     "lugar": "Luna Park",
     "precio": 8000,
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACCMlsnC5faOJTHqycA7k0G34zdfDPiAqqA&usqp=CAU",
-    "nombre": "'Solomun'",
+    "nombre": "Solomun",
     "categoria": "Concierto",
     "lugar": "Mandarine Park",
     "precio": 7000,
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "imagen": "https://i1.sndcdn.com/avatars-000102321276-9sqdg3-t500x500.jpg",
-    "nombre": "'La Delio Valdez'",
+    "nombre": "La Delio Valdez",
     "categoria": "Concierto",
     "lugar": "Teatro Metropolitan",
     "precio": 9000,
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiSpCc0sSKnJOryalY-bfURNM6dlgAs9ePWp6L_44rbijdGOI-_yJo2aLIvg2W4WIbhG8&usqp=CAU",
-    "nombre": "'TOC TOC'",
+    "nombre": "TOC TOC",
     "categoria": "Teatro",
     "lugar": "Teatro Gran Rex",
     "precio": 5000,
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "imagen": "https://comefromawaylondon.co.uk/app/uploads/2022/03/site-icon-512px.png",
-    "nombre": "'Come from away'",
+    "nombre": "Come from away",
     "categoria": "Teatro",
     "lugar": "Teatro Coliseo",
     "precio": 15000,
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "imagen": "https://www.varasotero.com.ar/wp-content/uploads/2022/06/PIAF-Posteo.png",
-    "nombre": "'Piaf'",
+    "nombre": "Piaf",
     "categoria": "Teatro",
     "lugar": "Teatro Liseo",
     "precio": 25000,
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "imagen": "https://cuarteldelmetal.com/wp-content/uploads/2023/05/347237003_939102900745368_5750128446098131547_n-1-720x720.jpg",
-    "nombre": "'Primavera Sound'",
+    "nombre": "Primavera Sound",
     "categoria": "Concierto",
     "lugar": "Parque Sarmiento",
     "precio": 60000,
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "imagen": "https://revistag7.com/wp-content/uploads/2023/05/1080x1080-ok-1024x1024-1-1024x1024.jpg",
-    "nombre": "'Secret Garden'",
+    "nombre": "Secret Garden",
     "categoria": "Show lumínico",
     "lugar": "Jardín Botánico",
     "precio": 5000,
@@ -101,11 +101,11 @@
   {
     "id": 10,
     "imagen": "https://cdn.getcrowder.com/images/07601eda-8d34-4d20-b414-f0e1f337b06b-abel640x640-5.png",
-    "nombre": "'The Weekend'",
+    "nombre": "The Weekend",
     "categoria": "Concierto",
     "lugar": "Estadio River Plate",
     "precio": 40000,
-    "fecha": "Sabado 30 de noviembre de 2023",
+    "fecha": "Sabado 30 de enero de 2024",
     "cantidad": 1,
     "entradasDisponibles": 20.000
   }

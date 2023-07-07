@@ -1,11 +1,10 @@
 @font-face {
-  font-family: 'AlbertSans';
-  src: url('./fonts/AlbertSans-VariableFont_wght.ttf') format('woff2'),
-       url('./fonts/AlbertSans-Italic-VariableFont_wght.ttf') format('woff');
+  font-family: 'Comfortaa';
+  src: url('./fonts/Comfortaa-VariableFont_wght.ttf') format('woff2');
 }
 
 body {
-  font-family: AlbertSans, sans-serif;
+  font-family: Comfortaa;
   background-color: rgb(1, 6, 82);
 }
 
@@ -29,6 +28,10 @@ body {
   margin: 10px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.input{
+  margin: 3px;
 }
 
 .colorFondo {
