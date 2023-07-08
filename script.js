@@ -17,9 +17,9 @@ const carritoCompra = document.getElementById("carritoCompra")
 //Incorporar titulares al DOM
 const tituloDOM = document.createElement("div")
 tituloDOM.innerHTML = `<img src="./Media/LOGO111.PNG" style='width:70% ; margin-bottom:50px'>
-  <h5> Portal online para venta de entradas <h5/>
+  <h4> Portal online para venta de entradas <h5/>
   <br>
-  <h3>¡Bienvenid@! Aquí encontrarás los mejores espectáculos en Argentina. <br> Conoce la amplia variedad de nuestro catálogo:</h3>`
+  <h5>¡Bienvenid@! Aquí encontrarás los mejores espectáculos en Argentina. <br> Conoce la amplia variedad de nuestro catálogo:</h5>`
 introPortal.append(tituloDOM)
 
 
