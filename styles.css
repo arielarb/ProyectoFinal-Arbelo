@@ -17,7 +17,6 @@ body {
 
 .botonNewsletter, .verCarrito {
   margin: 20px;
-  margin-bottom:40px;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +26,7 @@ body {
 #formulario{
   display: none;
   margin: 10px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
   justify-content: center;
 }
