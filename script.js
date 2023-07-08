@@ -48,7 +48,7 @@ function mostrarEventos(EventosEnJSON) {
          <h5 class="card-text">En ${evento.lugar}</h5>
          <p class="card-text">Categoría: ${evento.categoria}</p>
          <p class="card-text">${evento.fecha}</p>
-         <p class="card-text"><strong>Precio por entrada: ${evento.precio}</strong></p>
+         <p class="card-text"><strong>Precio por entrada: $${evento.precio}</strong></p>
          <input type="button" class="btn btn-primary" value="Comprar" onclick="agregarCarrito(${evento.id})"> 
        </div>
      </div>`
