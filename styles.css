@@ -17,6 +17,7 @@ body {
 
 .botonNewsletter, .verCarrito {
   margin: 20px;
+  margin-bottom:40px;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +54,7 @@ body {
 }
 
 .miCard {
-  padding: 5px;
+  padding: 7px;
 }
  
 #contenedorCards {
@@ -67,7 +68,7 @@ body {
     display: none;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     align-content: center;
     margin: 5px;
     padding: 5px;
@@ -77,9 +78,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: AlbertSans, sans-serif;
+  align-content: center;
+  font-family: Comfortaa;
+  padding: 10px;
   width: 260px;
+  height: 165px;
   text-align: center;
   background-color: rgb(147, 216, 147);
   margin: 5px;
 }
+

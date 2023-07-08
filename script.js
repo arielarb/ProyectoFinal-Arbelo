@@ -16,7 +16,7 @@ const carritoCompra = document.getElementById("carritoCompra")
 
 //Incorporar titulares al DOM
 const tituloDOM = document.createElement("div")
-tituloDOM.innerHTML = `<img src="./Media/LOGO111.PNG" style='width:50%'>
+tituloDOM.innerHTML = `<img src="./Media/LOGO111.PNG" style='width:70% ; margin-bottom:50px'>
   <h5> Portal online para venta de entradas <h5/>
   <br>
   <h3>¡Bienvenid@! Aquí encontrarás los mejores espectáculos en Argentina. <br> Conoce la amplia variedad de nuestro catálogo:</h3>`
@@ -178,7 +178,8 @@ const eliminarCarrito = (evento) => {
 }
 
 
-//Calcular el monto total de un carrito de compras en el local storage utilizando el metodo reduce:
+/*Calcular el monto total de un carrito de compras en el local storage utilizando el metodo reduce:
+IMPORTANTE: NO LOGRÉ HACER FUNCIONAR ESTE CÓDIGO, INTENTÉ VARIAS OPCIONES PERO NO FUE POSIBLE APLICAR EL PRODUCTO DE ESTE ALGORITMO AL FINALIZAR LA COMPRA*/
 const totalAPagar = carrito.reduce((acum, evento) => {
   return acum + (evento.precio * evento.cantidad);
 }, 0);
@@ -195,17 +196,17 @@ verCarrito.onclick = () => {
 //Botones que acompañan a los elementos en el carrito
 const paraFinalizarCompra = document.getElementById("paraFinalizarCompra")
 const finalizarCompra = document.createElement("div")
-finalizarCompra.innerHTML += `<h6 style="color:white"> Monto total de tu compra: $${totalAPagar} </h6>
-      <input type="button" value="Finalizar Compra" onClick="terminarCompra()">
-      <input type="button" value="Vaciar Carrito" onClick="vaciarCarrito()">`
+finalizarCompra.innerHTML += `
+      <input type="button" value="Finalizar Compra" class="btn btn-primary" onClick="terminarCompra()">
+      <input type="button" value="Vaciar Carrito" class="btn btn-primary" onClick="vaciarCarrito()">`
 paraFinalizarCompra.append(finalizarCompra)
 
 function terminarCompra(){
   swal.fire({
     title: "¡Muchas gracias!",
-    text: "Tu compra fue realizada con éxito",
+    text: `El pago fue realizado con éxito`,
     icon: "success",
-    timer: 3000
+    timer: 6000
   }) 
   localStorage.removeItem("carrito")
   carrito.pop()
