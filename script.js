@@ -80,6 +80,7 @@ btnSubmit.onclick = () => {
       'Te suscribiste a nuestro Newsletter semanal.',
       'success'
     );
+    document.getElementById("formulario").style.display = "none";
   } else {
     Swal.fire(
       'Error en los datos ingresados',
@@ -211,6 +212,8 @@ function terminarCompra(){
   localStorage.removeItem("carrito")
   carrito.pop()
   carritoCompra.innerHTML = ``
+  document.getElementById("paraFinalizarCompra").style.display = "none";
+  document.getElementById("carritoCompra").style.display = "none";
 } 
 
 function vaciarCarrito(){
@@ -224,4 +227,6 @@ function vaciarCarrito(){
     })
     localStorage.removeItem("carrito")
     carritoCompra.innerHTML = ``
+  document.getElementById("paraFinalizarCompra").style.display = "none";
+  document.getElementById("carritoCompra").style.display = "none";
 } 
